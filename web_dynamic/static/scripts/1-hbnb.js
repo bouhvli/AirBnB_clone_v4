@@ -9,6 +9,13 @@ $(document).ready(function () {
             delete idsOfAmenitiesSelected[amenityName];
         }
         var selectedNames = Object.keys(idsOfAmenitiesSelected);
-        $('.amenities h4').text(selectedNames.sort().join(', '));
+        if (selectedNames.length < 3) {
+            for (let i = 0; i < 3 && i < selectedNames.length; i++) {
+                $('.amenities h4').text(selectedNames.join(', '));
+            }
+        } else if (selectedNames.length == 3) {
+            $('.amenities h4').text(selectedNames.concat(' ...'));
+        }
+        
     });
 });
