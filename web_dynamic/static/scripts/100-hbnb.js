@@ -13,7 +13,7 @@ $(document).ready(function () {
         let selectedNames = Object.keys(idsOfAmenitiesSelected);
         checkedData(selectedNames, '.amenities h4');
     });
-    $.get("http://localhost:5001/api/v1/status/",
+    $.get("http://0.0.0.0:5001/api/v1/status/",
         function (data, textStatus) {
             if (data.status === 'OK' && textStatus === 'success')
                 $('div#api_status').addClass('available');
@@ -23,7 +23,7 @@ $(document).ready(function () {
     );
     $.ajax({
         type: "POST",
-        url: "http://localhost:5001/api/v1/places_search/",
+        url: "http://0.0.0.0:5001/api/v1/places_search/",
         data: JSON.stringify({}),
         headers: { 'Content-Type': 'application/json' },
         success: function (response) {
@@ -55,7 +55,7 @@ $(document).ready(function () {
         $('article').remove();
         $.ajax({
             type: "POST",
-            url: "http://localhost:5001/api/v1/places_search/",
+            url: "http://0.0.0.0:5001/api/v1/places_search/",
             data: JSON.stringify({ 'amenities': Object.values(idsOfAmenitiesSelected),
                                    'states': Object.values(stateIDs),
                                    'cities': Object.values(cityIDs) }),
