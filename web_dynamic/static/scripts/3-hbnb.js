@@ -17,7 +17,7 @@ $(document).ready(function () {
             $('.amenities h4').text(selectedNames.concat(' ...'));
         }
     });
-    $.get("http://localhost:5001/api/v1/status/",
+    $.get("http://0.0.0.0:5001/api/v1/status/",
         function (data, textStatus) {
             if (data.status === 'OK' && textStatus === 'success')
                 $('div#api_status').addClass('available');
@@ -27,7 +27,7 @@ $(document).ready(function () {
     );
     $.ajax({
         type: "POST",
-        url: "http://localhost:5001/api/v1/places_search/",
+        url: "http://0.0.0.0:5001/api/v1/places_search/",
         data: JSON.stringify({}),
         headers: { 'Content-Type': 'application/json' },
         success: function (response) {
