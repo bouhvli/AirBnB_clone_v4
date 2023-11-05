@@ -19,7 +19,6 @@ $(document).ready(function () {
     });
     $.get("http://localhost:5001/api/v1/status/",
         function (data, textStatus) {
-            console.log(textStatus)
             if (data.status === 'OK' && textStatus === 'success')
                 $('div#api_status').addClass('available');
             else
@@ -61,7 +60,7 @@ $(document).ready(function () {
         $.ajax({
             type: "POST",
             url: "http://localhost:5001/api/v1/places_search/",
-            data: JSON.stringify({ 'amenities': Object.keys(idsOfAmenitiesSelected) }),
+            data: JSON.stringify({ 'amenities': Object.values(idsOfAmenitiesSelected) }),
             headers: { 'Content-Type': 'application/json' },
             success: function (response) {
                 for (const place of response) {
