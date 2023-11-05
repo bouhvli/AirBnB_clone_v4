@@ -99,3 +99,21 @@
 .user {
   margin-bottom: 1.5%;
 }
+.reviews li{
+    margin: 15px 0px;
+}
+.reviews h2{
+    font-size: 14px;
+    padding: 10px 0px;
+    text-align: left;
+    border-bottom: 1px solid #969696;
+}
+.reviews h2 span{
+    float: right;
+    font-weight: normal;
+    color: #FF5A5F;
+    cursor: pointer;
+}
+.reviews p{
+    font-size: 12px;
+}
